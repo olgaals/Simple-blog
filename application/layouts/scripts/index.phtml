@@ -1,0 +1,23 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+<?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8'); ?>
+<?php echo $this->headTitle(); ?> 
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl().'/css/styles.css') ?>
+</head>
+<body>
+<div class="container">
+	<div class="header"><h1 class="s_blog">
+	<?php if($this->authorathed):?><a href="<?=$this->url(array('controller'=>'auth','action'=>'home'), null, TRUE)?>"><?php endif;?>
+		Simple<span class="blog_txt">Blog</span>
+	<?php if($this->authorathed):?></a><?php endif;?>
+	</h1></div>
+
+	<div id="menu"><?php  echo $this->layout()->menu; ?></div>
+
+	<div class="block1"><?php echo $this->layout()->content ?></div>
+	
+	<div class="footer"><div class="copy">&copy; 2011&nbsp;<strong>SimpleBlog</strong></div></div>
+</div>
+</body>
+</html>

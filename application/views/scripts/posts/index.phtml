@@ -1,0 +1,17 @@
+<?php if (count($this->posts) < 1) : ?>
+	<p>There is no more posts.</p>
+	<?php else : foreach ($this->posts as $post) : ?>
+       	<div class="post_ttl"><div class="p_txt"><?php echo $this->escape($post->title) ?></div></div>
+	<div class="post_cont">
+		Posted by: <strong><?php echo $post->email ?></strong> <br>
+        	    	<?php echo html_entity_decode($post->blog_post);?>
+        	    	<div class="clear"></div>
+			<div class="post_info">
+				<div class="right_align">
+					<!-- <div class="rd_more"><a href="<?php /*echo $this->url(array('controller' => 'posts', 'action' => 'post', 'id' => $post->id)) */?>">Read more</a></div> -->
+					<div class="comment"><a href="<?php echo $this->url(array('controller' => 'posts', 'action' => 'post', 'id' => $post->id)) ?>" >Comments</a></div>
+					<div class="time"><?php echo $this->escape($post->created_at) ?></div>
+				</div>
+             </div>
+                </div>
+		<?php endforeach; endif; ?>

@@ -1,0 +1,22 @@
+<?php
+
+	error_reporting(E_ALL|E_STRICT);
+	ini_set('display_errors', true);
+	
+	 
+	$rootDir = dirname(dirname(__FILE__));
+	set_include_path($rootDir . '/library' . PATH_SEPARATOR . get_include_path());
+	 
+	 
+	require_once 'Zend/Controller/Front.php';
+	require_once 'Zend/Registry.php';
+	 
+	Zend_Registry::set('title',"My First Application");
+	 
+	$arrName = array('Ilmia Fatin','Aqila Farzana', 'Imanda Fahrizal');
+	Zend_Registry::set('credits',$arrName);
+	 
+	 
+	Zend_Controller_Front::run('../application/controllers');
+	 
+?>

@@ -1,0 +1,7 @@
+<ul >
+<?php foreach( $this->menu as $m ): ?>
+  	<li>
+  	<a href="<?=$this->url(array('controller'=>$m['controller'],'action'=>$m['action']), null, TRUE)?>"><?=$m['label']?></a>
+  	</li>
+<?php endforeach; ?>
+</ul>

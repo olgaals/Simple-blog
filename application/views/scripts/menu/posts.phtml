@@ -1,0 +1,12 @@
+<ul >
+<?php foreach( $this->menu as $m ): ?>
+ <?php if(@$m['class']):?>
+  	<li class="<?=$m['class']?>">
+  		<?=$m['label']?>
+  <?php else:?>
+  	<li>		
+  	<a href="<?=$this->url(array('controller'=>$m['controller'],'action'=>$m['action']), null, TRUE)?>"><?=$m['label']?></a>
+  <?php endif;?>	
+  </li>
+<?php endforeach; ?>
+</ul>

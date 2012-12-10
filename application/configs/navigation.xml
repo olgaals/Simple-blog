@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+<nav>
+    <pages>
+            <label>Posts</label>
+            <controller>Posts</controller>
+            <action>index</action>
+
+
+            <label>Create</label>
+            <controller>Posts</controller>
+            <action>create</action>
+
+      
+    </pages>
+</nav>
+</configdata>

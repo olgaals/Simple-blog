@@ -1,0 +1,13 @@
+           	<div class="post_ttl"><div class="p_txt"><?php echo $this->post['title'] ?></div></div>
+		<div class="post_cont">	
+			<?php echo html_entity_decode($this->post['blog_post']); ?>
+			<div class="post_com_txt">Comments</div>
+			<?php if (empty($this->comments)) : ?><p>No comments</p>
+			<?php else : foreach ($this->comments as $comment) : ?>
+		        	<div class="comment_from"><?php echo $this->escape($comment['email']) ?></div> 
+	        		<?php echo  html_entity_decode($comment['blog_comment']); ?>
+	        		<div class="clear"></div>
+				<div class="c_time"><div class="time_txt"><?php echo $comment['created_at'] ?></div></div>
+	        	<?php endforeach; endif ?>
+		</div>
+		<?php echo $this->form ?>
